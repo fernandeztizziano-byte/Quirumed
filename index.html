@@ -95,6 +95,7 @@ table tbody td input:focus { background: #f0fff0; }
 .imp-der { text-align: right; line-height: 1.6; }
 
 @media print {
+  @media print {
   @page { size: A4; margin: 8mm; }
   html, body { background: white; padding: 0; margin: 0; }
   body { display: block; }
@@ -105,6 +106,21 @@ table tbody td input:focus { background: #f0fff0; }
   .campo { min-height: 22px !important; padding: 3px 10px !important; }
   .tbl-wrap { min-height: unset !important; }
   .firma-row { padding: 4px 16px !important; }
+
+  /* ESTO ES LO QUE FALTABA - fuerza que la imagen de la firma se imprima */
+  img {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .firma-inner img {
+    max-width: 450px !important;
+    max-height: 220px !important;
+  }
+}
 }
 </style>
 </head>
